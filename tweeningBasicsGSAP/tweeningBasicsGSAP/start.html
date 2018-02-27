@@ -9,7 +9,7 @@
         }
 
         #icon {
-          
+            position: absolute;          
         }
     </style>
 </head>
@@ -29,7 +29,7 @@
 <script>
     var icon = document.getElementById("icon");	
 
-    TweenLite.to(icon, 2, {rotation:360, left:400});
+    TweenLite.to(icon, 2, {rotation:360, left:400, ease:Back.easeOut, delay:1});
     
 </script>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Exercise 8</title>
+		<style type="text/css">
+			@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+			body { 
+                padding: 10px; 
+                font-family: 'Open Sans', sans-serif; 
+            }
+            
+            a#myAdLink {
+                display: inline-block;
+            }
+            
+            #myAd {
+                width: 920px; 
+                height: 100px;
+                position: relative;
+                overflow: hidden;
+                background-color: red; 
+            }
+            
+            #myAdText {
+                position: absolute;
+                width: inherit;
+                color: white;
+                text-align: center;
+                font-size: 2.0em;
+                text-shadow: 0px 3px 3px rgba(102, 0, 0, 0.5);
+            }
+            
+            #myAdImg {
+                background: url(cart.png);
+                width: 100px;
+                height: 100px;
+                margin-left: 50px;
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }  
+            
+        </style>
+	</head>
+	<body>
+
+		<a id="myADLink" href="http://traderjoes.com">
+            <div id="myAd">
+                <div id="myAdText">Stop by your local Trader Joe's!</div>
+                <div id="myAdImg"></div>
+            </div>
+        </a>
+        
+        <!-- Link GSAP into file -->
+        <script type="text/javascript" src="TweenMax.min.js"></script>
+        
+        <script>
+            (function() {
+        
+                var timeline1 = new TimelineMax();
+                
+                timeline1.from('#myAdText', 1, { top: -150, ease: Bounce.easeOut })
+                .from('#myAdImg', 2, { x:1000 }, '+=0.5');
+                
+            }());
+        </script>
+	</body>
+</html>
